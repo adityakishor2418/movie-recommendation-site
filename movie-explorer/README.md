@@ -1,16 +1,30 @@
-# React + Vite
+#  Movie Explorer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Introduction
 
-Currently, two official plugins are available:
+Movie Explorer is a web app for finding and exploring movies. It uses data from The Movie Database (TMDB) API to show trending, popular, top-rated, and upcoming films. I also included a small AI chatbot powered by Groq to help users find movies just by asking.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tech Stack
 
-## React Compiler
+* **Frontend:** React.js (built with Vite)
+* **Routing:** React Router (`react-router-dom`)
+* **Languages:** HTML, CSS, and JavaScript
+* **APIs:** * **TMDB API:** For movie data, posters, and search.
+  * **Groq API:** Runs the LLaMA 3 model for the AI chat.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features
 
-## Expanding the ESLint configuration
+### 1. Home Page
+The front page shows a grid of today's trending movies. It has a simple dark background with yellow accents.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 2. Movie Categories
+The navigation bar has links for "Popular", "Top Rated", and "Upcoming" movies. Under the hood, these all use the same reusable React component to fetch different data based on what you clicked.
+
+### 3. Movie Details
+If you click on any movie poster, it takes you to a new page showing the full poster, plot summary, release date, and user rating. 
+
+### 4. Search Bar
+There's a search bar at the top of every page. Typing in a movie name updates the URL and brings up a grid of matching search results.
+
+### 5. AI Chat Assistant
+There is a floating chat button in the bottom corner. Clicking it opens a small window where you can talk to an AI to get movie recommendations or ask trivia.
